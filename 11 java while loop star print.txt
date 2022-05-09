@@ -1,0 +1,26 @@
+package com.company.loop;
+import java.util.Scanner;
+public class type
+{
+    public static void main(String[] args)
+    {
+        System.out.print("enter a number of reapeted loop ");
+        Scanner ali = new Scanner(System.in);
+        int n = ali.nextInt();
+          int n1=0,i=0;
+        while(n1<=n)
+        {
+
+          while(i<=n1)
+          {
+              System.out.print("*");
+              i++;
+
+          }
+          i=0;
+          System.out.print("\n");
+          n1++;
+
+        }// upper while case
+    }
+}

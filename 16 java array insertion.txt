@@ -1,0 +1,43 @@
+package com.company.loop;
+import java.util.Scanner;
+public class type
+{
+    public static void main(String[] args) {
+
+        Scanner ali = new Scanner(System.in);
+        int size;
+        System.out.print("enter array size ");
+        size=ali.nextInt();
+        int[] al = new int[size];//6
+        int k=0;
+        for(int i=0;i<size-1;i++)
+        {  System.out.print("enter element ");
+        al[i]=ali.nextInt();
+        k++;
+        }
+        System.out.print("\n");
+
+        for(int i=0;i<k;i++)
+        {
+            System.out.printf("roll %d is %d ",i,al[i]);
+            System.out.print("\n");
+        }
+
+        System.out.println(" Enter number to be insert ");
+        int num=ali.nextInt();
+
+        for(int i=k-1;i>=num;i--)
+        {
+            al[i+1]=al[i];
+        }
+        System.out.print("enter bew value ");
+        al[num]=ali.nextInt();
+        System.out.println("after insertion value ");
+        for(int i=0;i<=k;i++)
+        {
+            System.out.printf("\nnumber %d = %d",i,al[i]);
+        }
+        }
+
+
+}

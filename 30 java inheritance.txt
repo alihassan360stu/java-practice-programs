@@ -1,0 +1,86 @@
+package com.company;
+import javax.swing.table.TableRowSorter;
+import java.util.Scanner;
+
+class animal
+{
+    String name;
+    int group;
+    String king;
+    animal()
+    {
+        name="goat";
+        group=4;
+        king="dianasor";
+    }
+    animal(String an_name,int agroup,String aking)
+    {
+        name=an_name;
+        group=agroup;
+        king=aking;
+    }
+    void type()
+    {
+        System.out.println("there are "+group+ " types of animal ");
+    }
+    void king ()
+    {
+        System.out.println(king+" is the king of the jungle ");
+    }
+    void name_ann()
+    {
+        System.out.println(" My like animal name is "+name);
+    }
+}
+
+class bus extends animal{
+    String jungle;
+    int increase;
+    int killed;
+    String loin;
+    bus (String j,int i,int k,String l)
+    {
+        jungle=j;
+        increase=i;
+        killed=k;
+        loin=l;
+    }
+    void jun ()
+    {
+        System.out.println("Jungle is in "+jungle);
+    }
+    void inc()
+    {
+        System.out.println("increase time is "+increase);
+    }
+    void kil()
+    {
+        System.out.println("they are "+killed+" killed ");
+    }
+    void kin()
+    {
+        System.out.println("the nexr king is "+loin);
+    }
+}// bus class end
+
+public class inheritance {
+
+    public static void main(String[] args) {
+        Scanner al=new Scanner(System.in);
+        animal obj=new animal("zibra",3,"loing");
+        obj.name_ann();
+        obj.type();
+        obj.king();
+        //this is a class of animal and also called base class or super class or parent class
+        System.out.println("after exit class \n\n\n\n\n\n");
+        bus alih=new bus("amirican",5,8,"loin");
+        alih.name_ann();
+        alih.type();
+        alih.king();
+        alih.jun();
+        alih.inc();
+        alih.kil();
+        alih.kin();
+
+    }
+}

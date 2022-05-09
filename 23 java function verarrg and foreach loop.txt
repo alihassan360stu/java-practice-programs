@@ -1,0 +1,22 @@
+package com.company;
+
+public class Main {
+    static int add (int ...al)
+    {
+        int result=0;
+        for( int element:al)
+        {
+            result +=element;
+        }
+        return result;
+
+    }
+
+
+    public static void main(String[] args) {
+        System.out.println("first is "+add(1,2,3));
+        System.out.println("first is "+add(23,1,56));
+        System.out.println("first is "+add(34,67,8));
+        System.out.println("first is "+add(23,45,67));
+    }
+}

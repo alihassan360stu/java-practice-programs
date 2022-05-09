@@ -1,0 +1,63 @@
+
+abstract class ali
+{    int a,b;
+    ali()
+    {
+        a=6;
+        b=4;
+
+    }
+
+    void sub()
+    {
+        System.out.println("abstrect class addition "+(a+b));
+
+    }
+    void replay()
+    {
+        System.out.println("ali hassan i love too ");
+    }
+
+}
+
+class bus extends ali
+{
+    bus()
+   {
+    a=50;
+    b=45;
+   }
+    @Override
+    void sub()
+    {
+        System.out.println("bus class addition "+(a+b));
+
+    }
+
+}
+
+class hassan extends ali
+{
+    void khan()
+    {
+        System.out.println(" Bus i love you to ");
+    }
+
+}
+
+
+public class graghics
+{
+
+    public static void main(String[] args)
+    {
+        hassan ha=new hassan();
+        bus b=new bus();
+        ha.sub();
+        b.sub();
+        ha.khan();
+        b.replay();
+
+
+    }
+}

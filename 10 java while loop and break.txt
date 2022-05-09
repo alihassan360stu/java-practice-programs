@@ -1,0 +1,22 @@
+package com.company.loop;
+import java.util.Scanner;
+public class type
+{
+    public static void main(String[] args)
+    {
+        System.out.print("enter a number of reapeted loop ");
+        Scanner ali = new Scanner(System.in);
+       // int n = ali.nextInt();
+          int n=0;
+        while(true)
+        {
+         if(n==5)
+         {
+             System.out.println("number found ");
+             break;
+         }
+            System.out.printf("first = %d  \n ",n);
+         n++;
+        }
+    }
+}=

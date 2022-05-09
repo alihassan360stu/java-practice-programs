@@ -1,0 +1,26 @@
+package com.company;
+import java.sql.SQLOutput;
+import java.util.Scanner;
+import java.util.zip.CheckedOutputStream;
+
+public class Main {
+
+    public static void main(String[] args) {
+    Scanner al= new Scanner(System.in);
+    int a,b,c,d;
+
+        System.out.println("enter roll number  of a student \n\n");
+        a=al.nextInt();
+        if(a==56)
+        {
+            System.out.println("correct roll number ");
+        }
+        else
+        {
+            System.out.println("wrong roll number please try again");
+        }
+    }
+
+
+}
+s

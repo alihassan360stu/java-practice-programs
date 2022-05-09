@@ -1,0 +1,21 @@
+package com.company.loop;
+import java.util.Scanner;
+public class type {
+    public static void main(String[] args) {
+
+        Scanner al = new Scanner(System.in);
+        System.out.print("enter size of array");
+        int size = al.nextInt();
+        int[] arr = new int[size];
+        for (int i = 0; i < size; i++)
+
+              {
+            arr[i] = al.nextInt();
+             }
+
+        for(int element2:arr)
+        {
+            System.out.println(element2);
+        }
+    }
+}

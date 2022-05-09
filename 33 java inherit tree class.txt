@@ -1,0 +1,115 @@
+package com.company;
+import javax.swing.table.TableRowSorter;
+import java.util.Scanner;
+
+class animal
+{
+    String name;
+    int group;
+    String king;
+    animal(String name,int group,String king)
+    {
+      this. name=name;
+      this. group=group;
+      this.king=king;
+    }
+    void type()
+    {
+        System.out.println("there are "+group+ " types of animal ");
+    }
+    void king ()
+    {
+        System.out.println(king+" is the king of the jungle ");
+    }
+    void name_ann()
+    {
+        System.out.println(" My like animal name is "+name);
+    }
+}
+
+class bus extends animal{
+    String jungle;
+    int increase;
+    int killed;
+    String loin;
+
+    bus (String jungle,int increase,int killed,String loin)
+    {
+        super("zibra",8,"dog");
+
+        this.jungle=jungle;
+        this.increase=increase;
+        this.killed=killed;
+       this. loin=loin;
+    }
+    void jun ()
+    {
+        System.out.println("Jungle is in "+jungle);
+    }
+    void inc()
+    {
+        System.out.println("increase time is "+increase);
+    }
+    void kil()
+    {
+        System.out.println("they are "+killed+" killed ");
+    }
+    void kin()
+    {
+        System.out.println("the nexr king is "+loin);
+    }
+}// bus class end
+class hassan extends bus{
+    String entry;
+    String by;
+    hassan (String entry,String by)
+    {
+       super("karachi",56,50,"ali hassan");
+       this.entry=entry;
+       this.by=by;
+    }
+    void ent()
+    {
+        System.out.println("Entry in "+entry);
+    }
+    void b()
+    {
+        System.out.println("by animal is "+by);
+    }
+
+
+}
+
+public class inheritance {
+
+    public static void main(String[] args) {
+        Scanner al=new Scanner(System.in);
+        animal obj=new animal("zibra",3,"loing");
+        obj.name_ann();
+        obj.type();
+        obj.king();
+        //this is a class of animal and also called base class or super class or parent class
+        System.out.println("after exit class \n\n\n\n\n\n");
+        bus alih=new bus("amirican",5,8,"loin");
+        alih.name_ann();
+        alih.type();
+        alih.king();
+        alih.jun();
+        alih.inc();
+        alih.kil();
+        alih.kin();
+        System.out.println("after bus class then we inherit class from bus class name hassan\n\n\n\n");
+        hassan ob2=new hassan("in_lahore ","5__horse");
+        ob2.name_ann();
+        ob2.type();
+        ob2.king();
+        ob2.jun();
+        ob2.inc();
+        ob2.kil();
+        ob2.kin();
+        ob2.ent();
+        ob2.b();
+
+
+    }
+}

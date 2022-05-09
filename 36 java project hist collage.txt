@@ -1,0 +1,376 @@
+package com.company;
+import java.util.Scanner;
+import java.util.concurrent.LinkedTransferQueue;
+
+class collage// super class and have a main menu function which null pass and null return //
+{    Scanner input=new Scanner(System.in);
+
+     String name[]= new String[50];
+     String add[]=new String[50];
+     int roll[]= new int[50];
+     String fname[]=new String[50];
+
+    collage(String name,String add,String fname,int roll)
+    {
+        this.name[0]=name;
+        this.add[0]=add;
+        this.fname[0]=fname;
+        this.roll[0]=roll;
+    }
+
+    int mainMEnu()
+    {   int main_menu_switch;
+        boolean main_menu_loop=true;
+        System.out.print("\t\t MAINMENU \n\n");
+        System.out.println("1->  first year student ");
+        System.out.println("2->  second year student ");
+        System.out.println("3->  fee record  ");
+        System.out.println("4->  teacher record ");
+        System.out.print("5->  exit ");
+
+        while(main_menu_loop)
+        {
+            main_menu_switch=input.nextInt();
+
+            switch(main_menu_switch)
+            {
+                case 1:{return 1;}
+                case 2:{return 2;}
+                case 3:{return 3;}
+                case 4:{return 4;}
+                case 5:{main_menu_loop=false;break;}
+                default:{
+                    System.out.println("inviled option try agian \n");
+                }
+            }// switch bracket for select the option in above main menu function //
+        }
+        return 10;
+    }// main menu function end in this line and in this function compile return main function //
+
+}// collage class end in this line and this is a super class //
+
+
+class first_year extends collage// entry student class inherit from super class mean collage class//
+{
+    int first_count;
+
+  first_year(int x3)
+  {
+      super("ali_hassan","passkaly","saadat",1);
+      first_count=1;
+  }// constructer to initilize array 0 indis class first year and second year
+int first_year_menu ()
+{
+    int first_year_switch;
+    boolean first_year_loop=true;
+    System.out.print("\n\t\t First year \n\n");
+    System.out.println("1-> show student ");
+    System.out.println("2-> entry student ");
+    System.out.println("3-> search student ");
+    System.out.println("4-> back student ");
+    System.out.print("enter option ..");
+
+    while(first_year_loop)
+    {   first_year_switch=input.nextInt();
+        switch(first_year_switch)
+        {
+            case 1:{return 1;}
+            case 2:{return 2;}
+            case 3:{return 3;}
+            case 4:{first_year_loop=false;break;}
+            default:{
+                System.out.println("invalid option please try again \n");
+            }
+        }
+    }
+
+
+return 4;
+}// first year main menu function end in this function user select option whether 1 or 2 or or back//
+void show_record_11th(first_year obj)
+{
+    System.out.println("\t\tstudent list\n\n");
+    for(int i=0;i<first_count;i++)
+    {
+        System.out.print("\nstudent name         ->>> "+obj.name[i]);
+        System.out.print("\nstudent roll number  ->>> "+obj.roll[i]);
+        System.out.print("\nstudent add          ->>> "+obj.add[i]);
+        System.out.print("\nfather name          ->>> "+obj.fname[i]);
+        System.out.print("\n***********************************");
+    }
+}
+void intry_stydent_11th (first_year obj)
+{    boolean first_count_loop=true;
+
+    System.out.println("\t\tstudent entry \n\n");
+    for(int i=first_count;i<50;i++)
+    {
+        System.out.print("\nenter student name.. ");
+        obj.name[i]=input.next();
+        System.out.print("\nenter father name..");
+        obj.fname[i]=input.next();
+        System.out.print("\nenter address ");
+        obj.add[i]=input.next();
+        System.out.print("\nenter roll number ");
+        obj.roll[i]=input.nextInt();
+         first_count++;
+
+         break;
+
+    }// entry function of class first year//
+}
+void search_res(first_year obj)
+{   int search_roll,search_check=0;
+
+    System.out.println("\t\tSearch_details \n\n");
+    System.out.print("enter roll number ");
+    search_roll=input.nextInt();
+    for(int i=0;i<first_count;i++)
+    {
+        if (search_roll == obj.roll[i])
+        {
+            System.out.print("\nstudent name         ->>> "+obj.name[i]);
+            System.out.print("\nstudent roll number  ->>> "+obj.roll[i]);
+            System.out.print("\nstudent add          ->>> "+obj.add[i]);
+            System.out.print("\nfather name          ->>> "+obj.fname[i]);
+            System.out.print("\n***********************************");
+            search_check++;
+        }
+
+    }
+    if(search_check==0){
+        System.out.println("roll number not found try agian ");
+
+    }
+}// first year function search a roll number that take from user //
+    void first_year_calling(first_year obj)
+    {  int first_year_return;
+        boolean first_year_loop=true;
+        while(first_year_loop)
+        {
+            first_year_return=obj.first_year_menu();
+            if (first_year_return == 1)
+            {
+               obj.show_record_11th(obj);
+                System.out.print("enter 1 for back menu");
+                int n=input.nextInt();
+
+            }
+            else if (first_year_return == 2)
+            {
+            obj.intry_stydent_11th(obj);
+            System.out.print("enter 1 for back menu");
+            int n=input.nextInt();
+            }
+            else if (first_year_return == 3)
+            {
+            obj.search_res(obj);
+            System.out.print("enter 1 for back menu");
+            int n=input.nextInt();
+            }
+            else if(first_year_return == 4){first_year_loop=false;}
+        }//
+    }
+
+
+}// first year class end in this line //
+class second_year extends first_year
+{
+ second_year()
+ {
+     super(2);
+ }
+    @Override
+    int first_year_menu ()
+    {
+        int first_year_switch;
+        boolean first_year_loop=true;
+        System.out.print("\n\t\t First year \n\n");
+        System.out.println("1-> show student ");
+        System.out.println("2-> entry student ");
+        System.out.println("3-> search student ");
+        System.out.println("4-> back student ");
+        System.out.print("enter option ..");
+
+        while(first_year_loop)
+        {   first_year_switch=input.nextInt();
+            switch(first_year_switch)
+            {
+                case 1:{return 1;}
+                case 2:{return 2;}
+                case 3:{return 3;}
+                case 4:{first_year_loop=false;break;}
+                default:{
+                    System.out.println("invalid option please try again \n");
+                }
+            }
+        }
+
+
+        return 4;
+    }// first year main menu function end in this function user select option whether 1 or 2 or or back//
+
+    @Override
+    void first_year_calling(first_year obj2)
+    {  int first_year_return;
+        boolean first_year_loop=true;
+        while(first_year_loop)
+        {
+            first_year_return=obj2.first_year_menu();
+            if (first_year_return == 1)
+            {
+                obj2.show_record_11th(obj2);
+                System.out.print("enter 1 for back menu");
+                int n=input.nextInt();
+
+            }
+            else if (first_year_return == 2)
+            {
+                obj2.intry_stydent_11th(obj2);
+                System.out.print("enter 1 for back menu");
+                int n=input.nextInt();
+            }
+            else if (first_year_return == 3)
+            {
+                obj2.search_res(obj2);
+                System.out.print("enter 1 for back menu");
+                int n=input.nextInt();
+            }
+            else if(first_year_return == 4){first_year_loop=false;}
+        }//
+    }
+     @Override
+    void show_record_11th(first_year obj2)
+    {
+        System.out.println("\t\tstudent list\n\n");
+        for(int i=0;i<first_count;i++)
+        {
+            System.out.print("\nstudent name         ->>> "+obj2.name[i]);
+            System.out.print("\nstudent roll number  ->>> "+obj2.roll[i]);
+            System.out.print("\nstudent add          ->>> "+obj2.add[i]);
+            System.out.print("\nfather name          ->>> "+obj2.fname[i]);
+            System.out.print("\n***********************************");
+        }
+    }
+
+    void intry_stydent_11th (first_year obj2)
+    {    boolean first_count_loop=true;
+
+        System.out.println("\t\tstudent entry \n\n");
+        for(int i=first_count;i<50;i++)
+        {
+            System.out.print("\nenter student name.. ");
+            obj2.name[i]=input.next();
+            System.out.print("\nenter father name..");
+            obj2.fname[i]=input.next();
+            System.out.print("\nenter address ");
+            obj2.add[i]=input.next();
+            System.out.print("\nenter roll number ");
+            obj2.roll[i]=input.nextInt();
+            first_count++;
+
+            break;
+
+        }// entry function of class first year//
+    }
+}
+class fee_record extends  second_year
+{
+    void fee_record_list(first_year  obj,second_year obj1, fee_record obj3)
+
+    {   boolean fee_while=true;
+        int fee_option;
+        System.out.println("\t\tfee_record");
+        System.out.println("press 1 first year \npress 2 second year \npress 3 back\n");
+        System.out.print("Enter option here ");
+        while (fee_while)
+        {
+            fee_option = input.nextInt();
+
+            if (fee_option == 1) {obj3.search_res(obj);break;}
+            else if (fee_option == 2) { }
+            else if (fee_option == 3) { }
+
+        }
+
+
+    }
+
+    @Override
+    void search_res(first_year obj)
+    {   boolean yes=true;
+        int search_roll,search_check=0;
+
+        System.out.println("\t\tSearch_details \n\n");
+        System.out.print("enter roll number ");
+        while(yes)
+        {
+            search_roll = input.nextInt();
+            for (int i = 0; i < first_count; i++)
+            {
+                if (search_roll == obj.roll[i])
+                {
+                    System.out.print("\nstudent name         ->>> " + obj.name[i]);
+                    System.out.print("\nstudent roll number  ->>> " + obj.roll[i]);
+                    System.out.print("\nstudent add          ->>> " + obj.add[i]);
+                    System.out.print("\nfather name          ->>> " + obj.fname[i]);
+                    System.out.print("\n***********************************");
+                    search_check++;
+                   yes=false;
+                }
+
+            }
+            if (search_check == 0)
+            {
+                System.out.println("roll number not found try agian ");
+
+            }
+        }
+        System.out.println("\n\n\t\tfee system ");
+
+
+    }// first year function search a roll number that take from user //
+
+
+}
+public class collage_project {
+    public static void main(String[] args) {
+        second_year case2 =new second_year();
+        first_year case1=new first_year(1);
+        fee_record case3=new fee_record();
+        collage object=new collage("raza","passkaly","qamber ",3);
+
+        int main_menu_return=0;
+        int main_menu_return1=0;
+
+        boolean mainloop=true;
+        // *********************************************// function calling start from here //
+        while (mainloop)
+        {
+
+              if(main_menu_return1==0) {main_menu_return=object.mainMEnu();main_menu_return1++;}
+
+            if (main_menu_return == 1)
+            {
+                case1.first_year_calling(case1);
+                main_menu_return=object.mainMEnu();
+            }
+
+            else if (main_menu_return == 2)
+            {
+                case2.first_year_calling(case2);
+                main_menu_return=object.mainMEnu();
+            }
+            else if (main_menu_return == 3) {case3.fee_record_list(case1,case2,case3);}
+            else if (main_menu_return == 4) { }
+            else if(main_menu_return==10){mainloop=false;}
+            else {
+                System.out.println("you enter wrong option try again ");
+                 }
+        }
+
+
+        System.out.println("this is " +case2.roll[1]);
+    }// main function end its mean program end //
+
+}

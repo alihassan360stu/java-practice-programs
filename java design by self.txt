@@ -1,0 +1,55 @@
+import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.util.Scanner;
+public class graghics
+{
+    graghics()
+    {
+        Scanner scan =new Scanner(System.in);
+        Frame frame =new Frame("new fram work");
+        Button button=new Button("add");
+        Label label = new Label("tag now");
+        TextField text = new TextField("text");
+        TextArea area =new TextArea("text here ");
+    //***************************************** button setting
+
+    button.setBounds(40,40,50,50);
+    frame.add(button);
+    frame.setLayout(null);
+    button.setBackground(Color.red);
+    button.setForeground(Color.white);
+    //***************************************** button setting
+
+        //***************************************** label setting
+        label.setBounds(40,80,50,50);
+        frame.add(label);
+        //***************************************** label setting
+
+        //***************************************** text setting
+        text.setBounds(20,140,250,30);
+        frame.add(text);
+        //***************************************** text setting
+
+        // ****************************************** frame closing //
+        frame.setSize(500,500);
+        frame.setVisible(true);
+        // ****************************************** frame closing //
+        area.setBounds(80,200 , 200,200);
+        frame.add(area);
+
+        frame.addWindowListener(new WindowAdapter() {
+        @Override
+        public void windowClosing(WindowEvent e) {
+            frame.dispose();
+        }
+        });
+
+
+    }
+
+
+    public static void main(String[] args) {
+   graghics ty=new graghics();
+    }
+}

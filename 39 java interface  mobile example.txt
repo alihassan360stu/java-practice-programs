@@ -1,0 +1,190 @@
+package com.company;
+
+import java.util.Scanner;
+
+class phone
+{
+    Scanner obj=new Scanner(System.in);
+    String game;
+   void game (String game)
+   {
+       System.out.println("\nyou play this game "+game);
+   }
+   void about ()
+   {
+       System.out.println("this is samsung mobile ");
+       System.out.println("internal space 64 gb ");
+       System.out.println("camera 18 mega pixel \n\n");
+
+   }
+}
+interface  music
+{
+  void playlist();
+  void play12();
+}
+
+interface setting1
+{
+    void date(double sit);
+    void sim ();
+    void more();
+}
+
+ interface fileminager
+ {
+    void memory();
+    void phone_storage();
+    void show();
+}
+interface camera
+{
+ void take_photo(int photo);
+ void take_video(int video_time);
+ void show_gallery();
+}
+
+class smart_phone extends phone implements camera,fileminager,setting1,music
+{
+    @Override
+    public void playlist()
+    {
+        System.out.println("manu type pf play list availible here ");
+    }
+    @Override
+    public void play12()
+    {
+        System.out.println("this is our last option now paly the music ");
+    }
+    @Override
+  public   void date(double sit)
+    {
+        System.out.println("data is sit now "+sit);
+    }
+    @Override
+   public  void sim()
+    {
+        System.out.println("current sim is ufone ");
+    }
+    @Override
+    public void more()
+    {
+        System.out.println("more network is 4g");
+    }
+
+    @Override
+    public void memory()
+    {
+        System.out.println("in this moblie rame is 4 GB");
+    }
+    @Override
+    public void phone_storage()
+    {
+        System.out.println("in this nmobile internal sapce is 128 GB");
+    }
+    @Override
+    public void show()
+    {
+        System.out.println("song , film , video , picture ,game ");
+    }
+
+    @Override
+    public void take_photo(int photo)
+    {
+
+        for(int i=1;i<=photo;i++)
+        {
+            System.out.println("picture success full "+i);
+        }
+    }
+    @Override
+    public void take_video(int video_time)
+    {
+        System.out.println("vedio time duration complete "+video_time);
+    }
+    @Override
+    public void show_gallery()
+    {
+        System.out.println("jallerry is empty all data lost ");
+    }
+
+    void dispaly()
+    {
+        System.out.println("press 1 game\npress 2 camera\npress 3 file_menagment\npresss 4 setting\n" +
+                "press 5 music\npress 6 exit");
+    }
+
+ int selection (int x ,smart_phone mobile)
+ {
+     switch(x)
+     {
+         case 1:
+         {
+             System.out.print("enter game name ");
+             String game=obj.next();
+             mobile.game(game);
+             mobile.about();
+             break;
+         }
+
+         case 2:
+         {
+             System.out.print("enter number of picture ");
+             int x1 = obj.nextInt();
+             mobile.take_photo(x1);
+             System.out.print("\n enter vedio duration ");
+             x1 = obj.nextInt();
+             mobile.take_video(5);
+             System.out.println("");
+             mobile.show_gallery();
+             break;
+         }
+         case 3:
+         {
+           mobile.memory();
+           mobile.phone_storage();
+           mobile.show();
+           break;
+         }
+
+         case 4:
+         {
+             System.out.print("enter data ..");
+             double x2=obj.nextFloat();
+             mobile.date(x2);
+             mobile.sim();
+             mobile.more();
+
+             break;
+         }
+         case 5:{mobile.playlist();
+         mobile.play12();};
+         case 6:break;
+
+         default: x=2;
+             System.out.println("inviled option");
+     }
+ if(x>5)return 0;
+ else return 1;
+ }
+
+}
+
+
+public class Main {
+
+    public static void main(String[] args)
+    {
+        smart_phone new_phone =new smart_phone();
+        int x;
+        boolean loop=true;
+        while(loop)
+
+        {
+            new_phone.dispaly();
+            x=new_phone.obj.nextByte();
+           x=new_phone.selection(x,new_phone);
+           if(x==0)loop=false;
+        }
+    }
+}

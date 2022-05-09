@@ -1,0 +1,39 @@
+package com.company;
+import java.util.Scanner;
+import java.util.Random;
+
+class ali
+{
+    public String name1;
+    private int id;
+    private long con;
+    public void getdata ()
+    {
+        System.out.println("i am "+name1);
+    }
+}
+class bus
+{  public String name12;
+public void fun ()
+{
+    System.out.println("i am "+name12);
+
+}
+}
+public class Main {
+    public static void main(String[] args) {
+   Scanner bab=new Scanner(System.in);
+
+
+        ali hs=new ali();
+        bus h=new bus();
+        hs.name1=bab.next();
+        hs.name1=bab.nextLine();
+        h.name12=bab.next();
+        h.name12=bab.nextLine();
+        hs.getdata();
+        h.fun();
+
+
+    }
+}s

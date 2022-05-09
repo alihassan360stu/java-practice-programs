@@ -1,0 +1,23 @@
+package com.company;
+import java.sql.SQLOutput;
+import java.util.Scanner;
+import java.util.zip.CheckedOutputStream;
+
+public class Main {
+
+    public static void main(String[] args) {
+    Scanner al= new Scanner(System.in);
+    int a=6,b,c,d;
+
+        System.out.println("enter roll name  of a student \n\n");
+        String khan;
+        khan=al.next();
+
+        if(khan.equals("hasan"))
+        {
+            System.out.println("correct roll number ");
+        }
+
+    }
+
+}

@@ -1,0 +1,34 @@
+package com.company;
+import java.sql.SQLOutput;
+import java.util.Scanner;
+import java.util.zip.CheckedOutputStream;
+
+public class Main {
+
+    public static void main(String[] args) {
+    Scanner al= new Scanner(System.in);
+    int a,b,c,d;
+        System.out.println("enter age of a student \n\n");
+        a=al.nextInt();
+        if(a>0 && a<=20)
+        {
+        }
+        else if(a>20 && a<=40)
+        {
+            System.out.println("you are married man \n");
+        }
+        else if(a>40 && a<=60){
+            System.out.println("yor are going to be death\n");
+        }
+        else if(a>60 && a<=80)
+        {
+            System.out.println("you are old man\n");
+        }
+        else
+        {
+            System.out.println("you are going to death\n");
+        }
+    }
+
+    
+}

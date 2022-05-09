@@ -1,0 +1,58 @@
+package com.company;
+import java.sql.SQLOutput;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+    Scanner al= new Scanner(System.in);
+    int a,b;
+        System.out.print("1 for addition \n 2 for substrection \n 3 for multiplication\n " +
+                "4 for division\n 5 for reaminder \n enter choise operator ");
+        String choise;
+        choise=al.next();
+        System.out.print("\nenter first number ");
+        a=al.nextInt();
+        System.out.print("Enter second number");
+        b=al.nextInt();
+
+        switch (choise)
+        {
+            case "+":
+            {
+                System.out.println(a+b);
+                break;
+            }
+            case "-":
+            {
+                System.out.println(a-b);
+                break;
+
+            }
+            case "*":{
+                System.out.println(a*b);
+                break;
+            }
+            case "/":
+            {
+                System.out.println(a/b);
+                break;
+
+            }
+            case "%":
+            {
+                System.out.println(a%b);
+                break;
+
+            }
+
+            default:
+            {
+                System.out.println("inviled option ");
+            }
+        }
+
+
+    }
+
+}

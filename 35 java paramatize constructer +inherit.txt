@@ -1,0 +1,57 @@
+package com.company;
+import javax.swing.table.TableRowSorter;
+import java.util.Scanner;
+
+class ali
+{
+    int x;
+    ali(int x)
+    {this.x=x;
+        System.out.println("i am of class ali hassan construter "+x);
+    }
+void add()
+{
+    System.out.println("i am add function of class ali hassan");
+}
+}
+
+class bus extends ali
+{   int y;
+    bus(int y)
+    {super(78);
+        this.y=y;
+        System.out.println("i am of class bus construter "+y);
+    }
+    @Override
+    void add()
+    {
+        System.out.println("i am add function of class bus ");
+    }
+}
+class hassan extends bus
+{    int z;
+    hassan(int z)
+    {  super(56);
+        this .z=z;
+        System.out.println("i am of class bus construter "+z);
+    }
+    @Override
+    void add()
+    {
+        System.out.println("i am add function of class hassan ");
+    }
+}
+public class inheritance {
+
+    public static void main(String[] args) {
+        ali ha=new ali(100);
+        bus hass = new bus(150);
+        hassan khan =new hassan(90);
+        System.out.println("function calling start \n\n\n\n");
+        ha.add();
+        hass.add();
+        khan.add();
+
+
+    }
+}

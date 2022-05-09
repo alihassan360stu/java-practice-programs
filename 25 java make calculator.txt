@@ -1,0 +1,202 @@
+package com.company;
+import java.util.Scanner;
+public class Main {
+    //***************************************************//globel part
+    static int size=20,cho=0,che1=0;
+    static  int addition[]=new int [size];
+    static  int substract[]=new int [size];
+    static  int multiply[]=new int [size];
+    static  float division[]=new float [size];
+    static  float remainder[]=new float [size];
+
+    static  Scanner ope =new Scanner(System.in);
+    //8**************************************************// global part
+    static void histry (){ int a;//********************************** history function  //
+        if(che1==1) {
+        for (int i = 0; i < cho; i++) {
+            System.out.println(i+1+"-->>" + addition[i]); }
+        System.out.println("\nenter 2 back 1 operation ");che1--;
+            a = ope.nextInt();
+            if (a == 1) add();
+            else if (a == 2){ cho=0;display();}
+            else {histry();}}
+        //************************************************************************************//
+        else if (che1==2){
+            for (int i = 0; i < cho; i++) {
+                System.out.println(i+1+"-->>" + substract[i]);}
+                System.out.println("\nenter 2 back 1 operation ");che1=0;
+            a = ope.nextInt();
+            if (a == 1) sub();
+            else if (a == 2){ cho=0;display();}
+            else {histry();}}
+        //************************************************************************************//
+        else if (che1==3){
+            for (int i = 0; i < cho; i++) {
+                System.out.println(i+1+"-->>" + multiply[i]);}
+            System.out.println("\nenter 2 back 1 operation ");che1=0;
+            a = ope.nextInt();
+            if (a == 1) mul();
+            else if (a == 2){ cho=0;display();}
+            else {histry();}}
+        //************************************************************************************//
+        else if (che1==4){
+            for (int i = 0; i < cho; i++) {
+                System.out.println(i+1+"-->>" + division[i]);}
+            System.out.println("\nenter 2 back 1 operation ");che1=0;
+            a = ope.nextInt();
+            if (a == 1) div();
+            else if (a == 2){ cho=0;display();}
+            else {histry();}}
+        //************************************************************************************//
+        else if (che1==5){
+            for (int i = 0; i < cho; i++) {
+                System.out.println(i+1+"-->>" + remainder[i]);}
+            System.out.println("\nenter 2 back 1 operation ");che1=0;
+            a = ope.nextInt();
+            if (a == 1) rem();
+            else if (a == 2){ cho=0;display();}
+            else {histry();}}
+        //************************************************************************************//
+        else { System.out.println("Inviled option ");cho=0;display(); }
+
+
+    }//********************************************************* history function end //
+
+    static void add() { // addition function  start
+        Scanner add_obj=new Scanner(System.in);
+        int a1,a2,ans;
+        System.out.println("\t\t********");
+        System.out.println("\t\tAddition");
+        System.out.println("\t\t********\n");
+        System.out.print("---> ");
+        a1=add_obj.nextInt();
+        System.out.print("\n---> ");
+        a2=add_obj.nextInt();
+        ans=a1+a2;
+        System.out.print("\nRESULT---> "+ans);
+        for (int i=cho;i<size-1;){ addition[i]=ans;cho++;break; }// for loop using to triverse array
+        System.out.print("\npress 1 next calculate 2 checkk histry 3 back..");
+        byte choise_1;
+        choise_1= ope.nextByte();
+        if(choise_1==1){add();}
+        else if(choise_1==2){che1++;histry();}
+        else{cho=0;;display();}
+    }
+    static void  sub ()
+    {
+        Scanner add_obj=new Scanner(System.in);
+        int a1,a2,ans;
+        System.out.println("\t\t*********");
+        System.out.println("\t\tSubstract");
+        System.out.println("\t\t*********\n");
+        System.out.print("---> ");
+        a1=add_obj.nextInt();
+        System.out.print("\n---> ");
+        a2=add_obj.nextInt();
+        ans=a1-a2;
+        System.out.print("\nANS="+ans);
+        for(int i=cho;i<size-1;) {substract[i]=ans;cho++;break;}
+        System.out.print("\npress 1 next calculate 2 check histry 3 back..");
+        int choise =add_obj.nextInt();
+        if(choise==1) sub();
+        else if (choise==2){che1=2;histry();}
+        else {cho=0; display();}
+    }
+    static void  mul ()
+    {
+        Scanner add_obj=new Scanner(System.in);
+        int a1,a2,ans;
+        System.out.println("\t\t**************");
+        System.out.println("\t\tmultiplication");
+        System.out.println("\t\t***************\n");
+        System.out.print("---> ");
+        a1=add_obj.nextInt();
+        System.out.print("\n---> ");
+        a2=add_obj.nextInt();
+        ans=a1*a2;
+        System.out.print("\nANS="+ans);
+        for(int i=cho;i<size-1;) {multiply[i]=ans;cho++;break;}
+        System.out.print("\npress 1 next calculate 2 check histry 3 back..");
+        int choise =add_obj.nextInt();
+        if(choise==1) mul();
+        else if (choise==2){che1=3;histry();}
+        else {cho=0; display();}
+    }
+
+    static void  div ()
+    {
+        Scanner add_obj=new Scanner(System.in);
+        float a11,a21,ans1;
+        System.out.println("\t\t********");
+        System.out.println("\t\tdivision");
+        System.out.println("\t\t********\n");
+        System.out.print("---> ");
+        a11=add_obj.nextInt();
+        System.out.print("\n---> ");
+        a21=add_obj.nextInt();
+        ans1=a11/a21;
+        System.out.print("\nANS="+ans1);
+        for(int i=cho;i<size-1;) {division[i]=ans1;cho++;break;}
+        System.out.print("\npress 1 next calculate 2 check histry 3 back..");
+        int choise =add_obj.nextInt();
+        if(choise==1) div();
+        else if (choise==2){che1=4;histry();}
+        else {cho=0; display();}
+    }
+    static void  rem ()
+    {
+        Scanner add_obj=new Scanner(System.in);
+        float a1,a2,ans;
+        System.out.println("\t\t********");
+        System.out.println("\t\treminder");
+        System.out.println("\t\t********\n");
+        System.out.print("---> ");
+        a1=add_obj.nextInt();
+        System.out.print("\n---> ");
+        a2=add_obj.nextInt();
+        ans=a1%a2;
+        System.out.print("\nANS="+ans);
+        for(int i=cho;i<size-1;) {remainder[i]=ans;cho++;break;}
+        System.out.print("\npress 1 next calculate 2 check histry 3 back..");
+        int choise =add_obj.nextInt();
+        if(choise==1) rem();
+        else if (choise==2){che1=5;histry();}
+        else {cho=0; display();}
+    }
+
+    static void display() {
+        System.out.println("\t\t********");
+        System.out.println("\t\tMAINMENU");
+        System.out.println("\t\t********\n");
+        System.out.println("press 1 for addition ");
+        System.out.println("press 2 for subtraction ");
+        System.out.println("press 3 for multiplication ");
+        System.out.println("press 4 for division ");
+        System.out.println("press 5 for remainder ");
+        System.out.print("press 6 for exit\n");
+        System.out.print("enter option here ...");
+        byte option;
+        boolean while_loop=true;
+        while(while_loop)
+        {System.out.print("\u000c");
+            option=ope.nextByte();
+            switch (option)
+            {
+                case 1: add();while_loop=false;break;
+                case 2: sub();while_loop=false;break;
+                case 3:mul();while_loop=false;break;
+                case 4:div();while_loop=false;break;
+                case 5:rem();while_loop=false;break;
+                case 6:while_loop=false; break;
+                default: {
+                    System.out.println("Inviled option try again ");
+                }
+            }// switch statement for selection case add,sub,mul,div,rem and default value
+        }// while loop bracket use for display function //
+
+    }// display function bracket
+
+    public static void main(String[] args) {
+        display();
+    }
+}

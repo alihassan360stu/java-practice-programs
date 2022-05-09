@@ -1,0 +1,17 @@
+package com.company.loop;
+import java.util.Scanner;
+public class type {
+    public static void main(String[] args) {
+
+        Scanner al = new Scanner(System.in);
+
+        String web;
+        System.out.print("enter website name ");
+        web = al.next();
+        if (web.endsWith("ch")) {
+            System.out.println("it is indian");
+        } else {
+            System.out.println("else");
+        }
+    }
+}

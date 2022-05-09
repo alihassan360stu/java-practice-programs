@@ -1,0 +1,16 @@
+package com.company;
+
+public class Main {
+static void add(int arr[])
+{
+    arr[4]=45;
+    arr[3]=56 ;
+}
+    public static void main(String[] args) {
+	// write your code here
+        int arr[]=new int [5];
+        add(arr);
+        System.out.println("array chang is "+arr[4]+" "+arr[3]);
+    }
+}
+

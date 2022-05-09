@@ -1,0 +1,23 @@
+package com.company;
+
+public class Main {
+    static void add ()
+    {
+        System.out.println("hello i am int ");
+    }
+    static void add (int x)
+    {
+        System.out.println("hello i am int ");
+    }
+    static void add (float y)
+    {
+        System.out.println("hello i am int ");
+    }
+
+    public static void main(String[] args) {
+	add();
+	add(34545);
+	add(4.5f);
+
+    }
+}

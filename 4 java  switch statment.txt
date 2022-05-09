@@ -1,0 +1,41 @@
+package com.company;
+import java.sql.SQLOutput;
+import java.util.Scanner;
+import java.util.zip.CheckedOutputStream;
+
+public class Main {
+
+    public static void main(String[] args) {
+    Scanner al= new Scanner(System.in);
+    int a=6,b,c,d;
+
+        System.out.println("enter roll name  of a student \n\n");
+        int khan;
+        khan=al.nextInt();
+        switch (khan)
+        {
+            case 1:
+            {
+                System.out.println("option 1 ");
+                break;
+            }
+            case 2:
+            {
+                System.out.println("option 2 ");
+                break;
+
+            }
+            case 3:{
+                System.out.println("option 3 ");
+                break;
+            }
+            default:
+            {
+                System.out.println("inviled option ");
+            }
+        }
+
+
+    }
+    
+}
